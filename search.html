@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Product</title>
+  <link rel="stylesheet" href="./src/css/product.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <style>
+    .search-container { max-width: 500px; margin: 40px auto 24px auto; text-align: center; }
+    .search-input { width: 70%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 1.1rem; }
+    .search-btn { padding: 10px 24px; border-radius: 8px; border: none; background: #2563eb; color: #fff; font-weight: 600; margin-left: 8px; cursor: pointer; transition: background 0.2s; }
+    .search-btn:hover { background: #1741a6; }
+    .search-results { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 24px 0; justify-content: flex-start; }
+    .no-result { color: #e74c3c; font-size: 1.2rem; margin-top: 32px; text-align: center; width: 100%; }
+    /* Sử dụng lại style product-card từ product.css, chỉ bổ sung responsive nếu cần */
+    @media (max-width: 900px) {
+      .col-4 { flex: 0 0 50%; max-width: 50%; }
+    }
+    @media (max-width: 600px) {
+      .col-4 { flex: 0 0 100%; max-width: 100%; }
+      .product-card { min-height: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html">Home</a>
+    </div>
+  </nav>
+  <div class="search-container">
+    <h2>Tìm kiếm sản phẩm</h2>
+    <input type="text" id="searchBox" class="search-input" placeholder="Nhập tên sản phẩm...">
+    <button id="searchButton" class="search-btn">Tìm kiếm</button>
+  </div>
+  <div class="row search-results" id="results"></div>
+  <script type="module">
+    import { db } from './src/js/firebase-config.js';
+    import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js';
+
+    async function searchProducts(keyword) {
+      const resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
+      if (!keyword.trim()) {
+        resultsDiv.innerHTML = '<div class="no-result">Vui lòng nhập từ khóa tìm kiếm.</div>';
+        return;
+      }
+      const querySnapshot = await getDocs(collection(db, "products"));
+      let found = false;
+      querySnapshot.forEach(docSnap => {
+        const product = docSnap.data();
+        const productId = docSnap.id;
+        if (product.name && product.name.toLowerCase().includes(keyword.toLowerCase())) {
+          found = true;
+          const card = document.createElement('div');
+          card.className = 'col-4';
+          card.innerHTML = `
+            <div class="px-2 product-card" style="border:1px solid #eee;border-radius:10px;padding:16px;margin-bottom:18px;background:#fff;box-shadow:0 2px 8px #0001;">
+              <img src="${product.image}" alt="${product.name}" style="width:100%;max-width:180px;object-fit:cover;border-radius:8px;">
+              <h5 style="margin:12px 0 6px 0;font-size:1.1rem;">${product.name}</h5>
+              <p style="margin:0 0 6px 0;">Giá: <span style="color:#f4b400;font-weight:600;">${product.price}</span></p>
+              <p style="margin:0 0 12px 0;">Loại: ${product.type}</p>
+              <button class="btn btn-primary buy-btn" data-id="${productId}" style="width:60%;font-weight:500;">Buy</button>
+            </div>
+          `;
+          resultsDiv.appendChild(card);
+        }
+      });
+      if (!found) {
+        resultsDiv.innerHTML = '<div class="no-result">Không tìm thấy sản phẩm phù hợp.</div>';
+      }
+      // Buy button event
+      document.querySelectorAll('.buy-btn').forEach(btn => {
+        btn.onclick = function() {
+          window.location.href = `detail.html?id=${btn.dataset.id}`;
+        };
+      });
+    }
+    document.getElementById('searchButton').addEventListener('click', () => {
+      const keyword = document.getElementById('searchBox').value;
+      searchProducts(keyword);
+    });
+    document.getElementById('searchBox').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        searchProducts(e.target.value);
+      }
+    });
+  </script>
+</body>
+</html>

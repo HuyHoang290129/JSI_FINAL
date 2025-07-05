@@ -1,0 +1,131 @@
+/* admin.css - đồng bộ style với index.css, giữ nét hiện đại và nổi bật cho trang quản trị */
+body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+/* ...existing code... */
+
+/* Navbar vàng gold cho admin */
+.navbar {
+    background-color: #FFD700 !important; /* Gold */
+    border-bottom: 2px solid #e6c200;
+}
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .text-black,
+.navbar .btn {
+    color: #222 !important;
+}
+.navbar .nav-link.active {
+    font-weight: bold;
+    color: #b8860b !important; /* Dark gold cho active */
+}
+
+/* ...existing code...
+
+.sidebar {
+    min-width: 220px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #232526 0%, #f4b400 100%);
+    box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    border-radius: 0 24px 24px 0;
+}
+.sidebar h4 {
+    margin-bottom: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff;
+}
+.sidebar .nav-link {
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    transition: background 0.2s, color 0.2s;
+    color: #fff !important;
+}
+.sidebar .nav-link.active,
+.sidebar .nav-link:hover {
+    background: #fffbe7;
+    color: #f4b400 !important;
+    font-weight: bold;
+}
+
+.container {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+.table thead th {
+    background: #f4b400;
+    color: #232526;
+    border: none;
+}
+.table-bordered > :not(caption) > * > * {
+    border-color: #ffe082;
+}
+
+input[type='text'], input[type='number'], input[type='file'] {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s;
+}
+input[type='text']:focus, input[type='number']:focus, input[type='file']:focus {
+    border-color: #f4b400;
+    box-shadow: 0 0 0 2px #ffe082;
+}
+
+.btn-danger, .btn-secondary {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 8px 20px;
+    margin-right: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+.btn-danger {
+    background: linear-gradient(90deg, #f44336 0%, #f4b400 100%);
+    border: none;
+}
+.btn-danger:hover {
+    background: linear-gradient(90deg, #b71c1c 0%, #f4b400 100%);
+}
+.btn-secondary {
+    background: #757575;
+    border: none;
+}
+.btn-secondary:hover {
+    background: #232526;
+    color: #fff;
+}
+
+h4 {
+    color: #f4b400;
+    font-weight: bold;
+}
+
+@media (max-width: 991px) {
+    .d-flex {
+        flex-direction: column !important;
+    }
+    .sidebar {
+        min-width: 100%;
+        min-height: auto;
+        margin-bottom: 24px;
+        border-radius: 0 0 24px 24px;
+    }
+    .container {
+        margin-top: 16px;
+    }
+}

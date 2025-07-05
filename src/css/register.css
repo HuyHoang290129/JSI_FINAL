@@ -1,0 +1,186 @@
+/* register.css - Modern, beautiful, consistent with app theme */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: linear-gradient(135deg, #f4b400 0%, #ffe066 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #111;
+    animation: fadeInBody 1.2s cubic-bezier(.4,0,.2,1);
+}
+@keyframes fadeInBody {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.form-container {
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18), 0 2px 24px 0 #6a11cb22;
+    border-radius: 18px;
+    padding: 32px 18px 24px 18px;
+    width: 100%;
+    max-width: 340px;
+    backdrop-filter: blur(8px);
+    border: 1.5px solid rgba(255,255,255,0.22);
+    margin: 0 auto;
+    animation: popInForm 0.8s cubic-bezier(.4,0,.2,1);
+    text-align: center;
+}
+@keyframes popInForm {
+    0% { transform: scale(0.95) translateY(30px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+#register-form h1 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    color: #f4b400;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 8px #0002;
+    text-align: center;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.22);
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: box-shadow 0.2s, background 0.2s;
+    border: 1px solid rgba(255,255,255,0.10);
+    box-shadow: 0 2px 8px #6a11cb11;
+}
+.form-group:focus-within {
+    box-shadow: 0 0 0 3px #6a11cb55, 0 2px 8px #6a11cb22;
+    background: rgba(255,255,255,0.28);
+}
+
+.form-group .icon {
+    color: #6a11cb;
+    font-size: 1.25rem;
+    margin-right: 12px;
+    opacity: 0.85;
+}
+
+.form-control {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #111;
+    font-size: 1.08rem;
+    padding: 18px 0 10px 0;
+    border-radius: 0;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: background 0.2s, color 0.2s;
+}
+.form-control::placeholder {
+    color: #888;
+    opacity: 1;
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Floating label effect */
+.form-group label {
+    position: absolute;
+    left: 38px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bfa100;
+    font-size: 1.05rem;
+    pointer-events: none;
+    transition: 0.2s cubic-bezier(.4,0,.2,1);
+    background: transparent;
+    padding: 0 4px;
+}
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+    top: 0;
+    left: 34px;
+    font-size: 0.92rem;
+    color: #f4b400;
+    background: #fff8;
+    border-radius: 4px;
+}
+
+select.form-control {
+    color: #111;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight: 500;
+}
+
+button[type="submit"] {
+    background: linear-gradient(90deg, #f4b400 0%, #ffe066 100%);
+    color: #222;
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 0;
+    font-size: 1.15rem;
+    margin-top: 12px;
+    box-shadow: 0 4px 16px rgba(106,17,203,0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+button[type="submit"]:hover {
+    background: linear-gradient(90deg, #ffe066 0%, #f4b400 100%);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(106,17,203,0.13);
+}
+
+.alert {
+    padding: 14px 18px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+    color: #b94a48;
+    font-weight: 600;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px #fcb69f33;
+    border: none;
+    text-align: center;
+    animation: fadeInAlert 0.5s;
+}
+@keyframes fadeInAlert {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.redirect {
+    margin-top: 22px;
+    color: #e0e0e0;
+    font-size: 1.05rem;
+    text-align: center;
+}
+.redirect a {
+    color: #111;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.redirect a:hover {
+    color: #bfa100;
+    text-decoration: none;
+}
+
+@media (max-width: 500px) {
+    .form-container {
+        padding: 16px 2px;
+        max-width: 96vw;
+    }
+    #register-form h1 {
+        font-size: 1.1rem;
+    }
+}

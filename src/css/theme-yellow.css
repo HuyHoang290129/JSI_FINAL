@@ -1,0 +1,48 @@
+/* Navbar vàng hiện đại */
+.navbar-yellow {
+    background: linear-gradient(90deg, #FFD600 0%, #FFEA00 100%);
+    box-shadow: 0 4px 16px rgba(255, 214, 0, 0.15);
+    border-bottom: 3px solid #FFC400;
+}
+.navbar-yellow .navbar-brand,
+.navbar-yellow .nav-link,
+.navbar-yellow .navbar-toggler-icon {
+    color: #333 !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.navbar-yellow .nav-link.active,
+.navbar-yellow .nav-link:hover {
+    color: #fff !important;
+    background: #FFC400;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.navbar-yellow .btn-outline-success {
+    border-color: #FFD600;
+    color: #FFD600;
+}
+.navbar-yellow .btn-outline-success:hover {
+    background: #FFD600;
+    color: #333;
+}
+body {
+    background: linear-gradient(135deg, #FFFDE4 0%, #FFF9C4 100%);
+    min-height: 100vh;
+}
+footer {
+    background: #FFD600;
+    color: #333;
+    border-top: 3px solid #FFC400;
+    padding: 24px 0 10px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 16px rgba(255, 214, 0, 0.10);
+}
+.footer-container h3 {
+    color: #333;
+    font-weight: bold;
+}
+.footer-container a {
+    color: #333;
+    text-decoration: underline;
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/Cuoikhoa/src/css/index.css">
+    <link rel="stylesheet" href="/Cuoikhoa/src/css/carousel.css">
+    <link rel="stylesheet" href="/Cuoikhoa/src/css/theme-yellow.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet" href="./src/css/AI.css" />
+  </head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">Home</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./profile.html">Profile</a>
+              </li>
+             
+            </ul>
+            <button class="btn btn-search" type="button" style="margin-left:6px; min-width:120px; font-weight:600; letter-spacing:1px;background-color: gainsboro;" onclick="window.location.href='/Cuoikhoa/search.html'">
+              <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+            <div class="navright">
+               <button class="btn btn-danger btn-sm ms-2" id="logoutBtn" style="display:none;">Đăng xuất</button>
+              <a class="text-black" href="./login.html" id="loginLink">logout</a>
+            </div>
+          </div>
+        </div>
+        
+    </nav>  
+     <h1>Sports</h1>
+     
+      
+    <!-- Carousel Start -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/SPcuoikhoa/img/pumaultra5.png" class="d-block w-100" alt="Puma Ultra 5">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Puma Ultra 5</h5>
+            <p>Speed and style for every match.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/SPcuoikhoa/img/nikesuperfly.png" class="d-block w-100" alt="Nike Superfly">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Nike Superfly</h5>
+            <p>Unleash your potential with Nike.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="/SPcuoikhoa/img/adidascopa.png" class="d-block w-100" alt="Adidas Copa">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Adidas Copa</h5>
+            <p>Classic comfort, modern performance.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Carousel End -->
+     
+  
+  
+
+
+      <h2 style="color: red;">HOT SALE</h2>
+        <div class="row hot-sale-row"></div>
+        <a href="/Cuoikhoa/product.html">View all products</a>
+      </div>
+         <!-- Chatbot Toggler -->
+    <button id="chatbot-toggler">
+        <span class="material-symbols-rounded">mode_comment</span>
+        <span class="material-symbols-rounded">close</span>
+    </button>
+    <div class="chatbot-popup">
+        <!-- Chatbot Header -->
+        <div class="chat-header">
+            <div class="header-info">
+            <svg class="chatbot-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                <path
+                d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+                />
+            </svg>
+            <h2 class="logo-text">Chatbot</h2>
+            </div>
+            <button id="close-chatbot" class="material-symbols-rounded">keyboard_arrow_down</button>
+        </div>
+        <!-- Chatbot Body -->
+        <div class="chat-body">
+            <div class="message bot-message">
+            <svg class="bot-avatar" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 1024 1024">
+                <path
+                d="M738.3 287.6H285.7c-59 0-106.8 47.8-106.8 106.8v303.1c0 59 47.8 106.8 106.8 106.8h81.5v111.1c0 .7.8 1.1 1.4.7l166.9-110.6 41.8-.8h117.4l43.6-.4c59 0 106.8-47.8 106.8-106.8V394.5c0-59-47.8-106.9-106.8-106.9zM351.7 448.2c0-29.5 23.9-53.5 53.5-53.5s53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5-53.5-23.9-53.5-53.5zm157.9 267.1c-67.8 0-123.8-47.5-132.3-109h264.6c-8.6 61.5-64.5 109-132.3 109zm110-213.7c-29.5 0-53.5-23.9-53.5-53.5s23.9-53.5 53.5-53.5 53.5 23.9 53.5 53.5-23.9 53.5-53.5 53.5zM867.2 644.5V453.1h26.5c19.4 0 35.1 15.7 35.1 35.1v121.1c0 19.4-15.7 35.1-35.1 35.1h-26.5zM95.2 609.4V488.2c0-19.4 15.7-35.1 35.1-35.1h26.5v191.3h-26.5c-19.4 0-35.1-15.7-35.1-35.1zM561.5 149.6c0 23.4-15.6 43.3-36.9 49.7v44.9h-30v-44.9c-21.4-6.5-36.9-26.3-36.9-49.7 0-28.6 23.3-51.9 51.9-51.9s51.9 23.3 51.9 51.9z"
+                />
+            </svg>
+            <!-- prettier-ignore -->
+            <div class="message-text"> Xin chào 👋<br /> Tôi có thể giúp gì cho bạn hôm nay? </div>
+            </div>
+        </div>
+        <!-- Chatbot Footer -->
+        <div class="chat-footer">
+            <form action="#" class="chat-form">
+            <textarea placeholder="Message..." class="message-input" required></textarea>
+            <div class="chat-controls">
+                <button type="button" id="emoji-picker" class="material-symbols-outlined">sentiment_satisfied</button>
+                <div class="file-upload-wrapper">
+                <input type="file" id="file-input" hidden />
+                <img src="#" />
+                <button type="button" id="file-upload" class="material-symbols-rounded">attach_file</button>
+                <button type="button" id="file-cancel" class="material-symbols-rounded">close</button>
+                </div>
+                <button type="submit" id="send-message" class="material-symbols-rounded">arrow_upward</button>
+            </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <h3>Contact Us</h3>
+            <ul>
+                <li>Email: <a href="mailto:nguyenhuyhoang280820@gmail.com">nguyenhuyhoang280820@gmail.com</a></li>
+                <li>Phone: <a href="tel:+0812244709">0812244709</a></li>
+                <li>Address: 302/70 phan huy ích</li>
+                <li><a href="/services">Dịch vụ</a></li>
+                <li><a href="/privacy">Chính sách bảo mật</a></li>
+                <li><a href="/terms">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script type="module" src="/Cuoikhoa/src/js/index.js"></script>
+    <script type="module" src="/Cuoikhoa/src/js/product-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-storage-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+    <!-- Linking for file upload functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js"></script>
+    
+    <!-- Linking custom script -->
+    <script src="./src/js/script.js"></script>
+
+        
+</body>
+</html>
+

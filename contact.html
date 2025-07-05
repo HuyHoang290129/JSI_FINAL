@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Cuoikhoa/src/css/theme-yellow.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Roboto+Slab:wght@600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+      body, .btn, .footer-container {
+        font-family: 'Quicksand', 'Roboto Slab', Arial, sans-serif;
+        background: linear-gradient(135deg, #FFFDE4 0%, #FFF9C4 100%);
+      }
+     
+      .footer-container h3 {
+        font-family: 'Pacifico', cursive;
+        font-size: 2.1rem;
+        color: #FFD600;
+        background: none;
+        letter-spacing: 2px;
+        margin-bottom: 18px;
+        text-shadow: 0 2px 8px #fff9c4;
+      }
+      .footer-container ul, .footer-container li, .footer-container a {
+        font-family: 'Quicksand', Arial, sans-serif;
+        font-size: 1.08rem;
+        color: #333;
+      }
+     
+      .btn-search-yellow:hover, .btn-search-yellow:focus {
+        background: #FFC400;
+        color: #fff !important;
+        box-shadow: 0 8px 24px rgba(255, 214, 0, 0.22);
+        transform: translateY(-2px) scale(1.04);
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html">Home</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./order.html">Order</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./profile.html">Profile</a>
+              </li>
+             
+            </ul>
+           
+             
+               <button class="btn btn-search-yellow" type="button" style="margin-left:6px;" onclick="window.location.href='/Cuoikhoa/search.html'">
+              <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+            <div class="navright">
+               <button class="btn btn-danger btn-sm ms-2" id="logoutBtn" style="display:none;">Đăng xuất</button>
+              <a class="text-black" href="./login.html" id="loginLink">logout</a>
+            </div>
+          </div>
+        </div>
+        
+    </nav>
+</body>
+<footer>
+        <div class="footer-container">
+            <h3 style="text-align: center;color: black;background-color: #f4b400;" >Contact Us</h3>
+            <ul>
+                <li>Email: <a href="mailto:nguyenhuyhoang280820@gmail.com">nguyenhuyhoang280820@gmail.com</a></li>
+                <li>Phone: <a href="tel:+0812244709">0812244709</a></li>
+                <li>Address: 302/70 phan huy ích</li>
+                <li><a href="/services">Dịch vụ</a></li>
+                <li><a href="/privacy">Chính sách bảo mật</a></li>
+                <li><a href="/terms">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+    </footer>
+</html>
